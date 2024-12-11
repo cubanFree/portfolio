@@ -1,0 +1,73 @@
+<header class="xl:w-[70%] xl:mx-auto sticky top-0 z-10 bg-[#333333] py-4 px-4">
+    <nav
+        class="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0"
+    >
+        <!-- Nombre del usuario -->
+        <div class="text-lg sm:text-xl lg:text-2xl font-mono text-gray-200">
+            <a href="#presentation" class="typing-animation text-amber-600">
+                Alvaro Fuentes
+            </a>
+        </div>
+
+        <!-- Enlaces de redes sociales -->
+        <div class="flex space-x-6">
+            <a
+                href="https://wa.me/7022016895"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:scale-110 transition-transform"
+                aria-label="WhatsApp"
+            >
+                <img src="/whatsapp_icon.svg" alt="" class="w-6 sm:h-6" />
+            </a>
+            <a
+                href="https://github.com/cubanFree"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:scale-110 transition-transform"
+                aria-label="GitHub"
+            >
+                <img src="/github_icon.svg" alt="" class="w-6 sm:h-6" />
+            </a>
+            <a
+                href="mailto:alvarofuentesbarrera@gmail.com"
+                class="hover:scale-110 transition-transform"
+                aria-label="Email"
+            >
+                <img src="/gmail_icon.svg" alt="" class="w-6 sm:h-6" />
+            </a>
+        </div>
+    </nav>
+</header>
+
+<style>
+    .font-mono {
+        font-family: "Press Start 2P", monospace;
+    }
+
+    .typing-animation {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 0.1em solid white;
+        width: 0;
+        animation:
+            typing 1.5s steps(40) 1s forwards,
+            blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+</style>

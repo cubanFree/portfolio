@@ -1,0 +1,26 @@
+---
+import Presentation from "./Presentation.astro";
+import Projects from "./Projects.astro";
+---
+
+<main class="xl:w-[70%] xl:mx-auto flex-grow overflow-y-auto scroll-smooth">
+    <div class="container mx-auto px-4">
+        <Presentation />
+        <Projects />
+    </div>
+</main>
+
+<style>
+    main {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    main::-webkit-scrollbar {
+        display: none;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
