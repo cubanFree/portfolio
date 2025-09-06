@@ -1,78 +1,128 @@
+---
+const projects = [
+    {
+        id: 1,
+        title: "Alfa-Bio",
+        description: "Sistema de gestion de historias clinicas.",
+        image: "/img_product_2.webp",
+        imageAlt: "Alfa-Bio project preview showing medical history management system interface",
+        status: false,
+        statusText: false,
+        statusColor: false,
+        link: "https://alfa-bio-system.vercel.app"
+    },
+    {
+        id: 2,
+        title: "",
+        description: "",
+        image: "/img_product_2.webp",
+        imageAlt: "Task manager application interface with collaboration features",
+        status: "planning",
+        statusText: "Coming Soon",
+        statusColor: "text-blue-500",
+        link: null
+    },
+    {
+        id: 3,
+        title: "",
+        description: "",
+        image: "/img_product_3.webp",
+        imageAlt: "Task manager application interface with collaboration features",
+        status: "planning",
+        statusText: "Coming Soon",
+        statusColor: "text-blue-500",
+        link: null
+    }
+];
+---
+
 <section id="projects" class="py-16 sm:py-24 lg:py-32">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">
-        My Projects
-    </h2>
-    <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12"
-    >
-        <!-- Proyecto 1: Naja -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">
+            My Projects
+        </h2>
         <div
-            class="bg-neutral-700 shadow-lg hover:shadow-xl transition duration-200 rounded-lg overflow-hidden flex flex-col"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12"
         >
-            <img
-                src="/img_product_1.webp"
-                alt="Naja project preview"
-                class="w-full h-48 sm:h-56 lg:h-64 object-cover"
-                onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300';"
-            />
-            <div class="p-6 flex-grow flex flex-col">
-                <h3 class="text-xl sm:text-2xl font-bold mb-3">Naja</h3>
-                <a
-                    href="https://naja-sim.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-blue-500 hover:text-blue-400 mb-3 flex items-center gap-2"
+            {projects.map((project) => (
+                <div
+                    key={project.id}
+                    class="bg-neutral-700 shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg overflow-hidden flex flex-col"
                 >
-                    <img
-                        src="/link.svg"
-                        alt=""
-                        class="w-4 h-4"
-                        aria-hidden="true"
-                    />
-                    Visit website
-                </a>
-                <span class="flex items-center gap-2 mb-3 text-amber-600">
-                    <img
-                        src="/warning.svg"
-                        alt=""
-                        class="w-4 h-4"
-                        aria-hidden="true"
-                    />
-                    In development
-                </span>
-                <p class="text-sm sm:text-base mt-auto">
-                    The platform for collaborative economy that connects users
-                    and powers the knowledge of the economy.
-                </p>
-            </div>
-        </div>
-
-        <!-- Proyecto 2: Próximamente -->
-        <div
-            class="bg-neutral-700 shadow-lg hover:shadow-xl transition duration-200 rounded-lg overflow-hidden flex items-center justify-center p-8"
-        >
-            <div class="text-center">
-                <img
-                    src="/more.svg"
-                    alt="Coming Soon"
-                    class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4"
-                />
-                <p class="text-lg sm:text-xl font-semibold">Coming Soon</p>
-            </div>
-        </div>
-
-        <!-- Proyecto 3: Próximamente -->
-        <div
-            class="bg-neutral-700 shadow-lg hover:shadow-xl transition duration-200 rounded-lg overflow-hidden flex items-center justify-center p-8"
-        >
-            <div class="text-center">
-                <img
-                    src="/more.svg"
-                    alt="Coming Soon"
-                    class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4"
-                />
-                <p class="text-lg sm:text-xl font-semibold">Coming Soon</p>
-            </div>
+                    {project.link ? (
+                        <!-- Proyecto con contenido real -->
+                        <>
+                            <img
+                                src={project.image}
+                                alt={project.imageAlt}
+                                class="w-full h-48 sm:h-46 lg:h-50 object-cover"
+                                loading="lazy"
+                                width="400"
+                                height="256"
+                                onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzc0MTUxIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzlDQTNBRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIE5vdCBBdmFpbGFibGU8L3RleHQ+PC9zdmc+';"
+                            />
+                            <div class="p-6 flex-grow flex flex-col">
+                                <h3 class="text-xl sm:text-2xl font-bold mb-3">{project.title}</h3>
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-blue-500 hover:text-blue-400 mb-3 flex items-center gap-2 transition-colors duration-200"
+                                    aria-label={`Visit ${project.title} website`}
+                                >
+                                    <svg
+                                        class="w-4 h-4"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                    Visit website
+                                </a>
+                                {project.status && (
+                                    <span class={`flex items-center gap-2 mb-3 ${project.statusColor}`}>
+                                        <svg
+                                            class="w-4 h-4"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                            aria-hidden="true"
+                                        >
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                        </svg>
+                                        {project.statusText}
+                                    </span>
+                                )}
+                                <p class="text-sm sm:text-base">
+                                    {project.description}
+                                </p>
+                            </div>
+                        </>
+                    ) : (
+                        <!-- Proyecto "Coming Soon" -->
+                        <div class="flex items-center justify-center p-8 h-full">
+                            <div class="text-center">
+                                <svg
+                                    class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 text-gray-400"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                <p class="text-lg sm:text-xl font-semibold mb-2">{project.title}</p>
+                                <p class="text-sm text-gray-400 mb-3">{project.statusText}</p>
+                                <p class="text-xs text-gray-500">
+                                    {project.description}
+                                </p>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            ))}
         </div>
     </div>
 </section>
